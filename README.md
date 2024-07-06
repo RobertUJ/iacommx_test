@@ -1,7 +1,6 @@
 # IA.COM.MX Challenge -  Python Backend Engineer.
 
-This is a simple backend application that allows you to create, read, update and delete products. 
-It was developed using Python 3.11.9 FastAPI, PostgreSQL, Celery and Redis. 
+This is a simple backend application that allows you make a application to magic world.
 
 
 ## Getting Started
@@ -10,6 +9,21 @@ It was developed using Python 3.11.9 FastAPI, PostgreSQL, Celery and Redis.
 
 - Docker
 - Docker Compose
+
+### Stack tech
+- Python 3.11.9
+- FastAPI
+- PostgreSQL
+- Celery
+- Redis
+- Docker
+- Docker Compose
+- Pytest
+- Pydantic
+- SQLAlchemy
+- DBMate
+- Flower
+- 
 
 ## Installation
 After clone the repository, go to the project directory :
@@ -38,4 +52,9 @@ make logs
 To run the tests:
 ```bash
 make test
+```
+
+To show all docs and endpoints:
+```bash
+http://localhost:8000/docs
 ```
