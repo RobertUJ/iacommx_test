@@ -1,0 +1,59 @@
+repos:
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.6.0
+  hooks:
+  - id: trailing-whitespace       # Trailing whitespace checker
+  - id: end-of-file-fixer       # Fix missing EOF at the end of files
+  - id: debug-statements       # Check for debugger statements
+  - id: check-yaml       # Check for YAML syntax errors
+  - id: check-added-large-files       # Check for large files added to Git
+  - id: check-ast       # Check for Python code that does not parse
+  - id: check-json       # Check for JSON syntax errors
+  - id: check-merge-conflict       # Check for files that contain merge conflict strings
+  - id: check-yaml       # Check for YAML syntax errors
+  - id: name-tests-test       # Check for test functions with names that do not follow the naming convention
+  - id: mixed-line-ending       # Check for mixed line endings
+  - id: check-builtin-literals       # Check for use of Python built-in types as literals
+
+  # format and sort Python imports
+- repo: https://github.com/pycqa/isort
+  rev: 5.13.2
+  hooks:
+  - id: isort
+    args: [--profile, black, --line-length=80]
+
+  # code style checker with black
+- repo: https://github.com/psf/black
+  rev: 24.4.2
+  hooks:
+  - id: black
+
+  # code style checker with falke8
+- repo: https://github.com/PyCQA/flake8
+  rev: 7.1.0
+  hooks:
+  - id: flake8
+
+  # Lint Ruff
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.4.10
+  hooks:
+  - id: ruff
+    args: [--fix]
+  - id: ruff-format
+
+  # static type checking with mypy
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.10.0
+  hooks:
+  - id: mypy
+
+- repo: https://github.com/sourcery-ai/sourcery
+  rev: v1.16.0
+  hooks:
+  - id: sourcery
+    # The best way to use Sourcery in a pre-commit hook:
+    # * review only changed lines:
+    # * omit the summary
+    args: [--diff=git diff HEAD, --no-summary]

@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "iacom-prueba-tecnica"
+version = "0.0.1"
+description = "Prueba técnica para reclutamiento en ia.com.mx"
+authors = ["Roberto Urita Jimenez <robertuj@gmail.com>"]
+license = "No License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11 <=3.12"
+fastapi = "^0.111.0"
+sqlalchemy = "^2.0.31"
+pandas = "^2.2.2"
+uvloop = "^0.19.0"
+httptools = "^0.6.1"
+sentry-sdk = {extras = ["fastapi"], version = "^2.6.0"}
+pydantic-settings = "^2.3.3"
+pendulum = "^3.0.0"
+psycopg2-binary = "^2.9.9"
+bcrypt = "^4.1.3"
+python-jose = "^3.3.0"
+celery = {extras = ["redis"], version = "^5.4.0"}
+flower = "^2.0.1"
+
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+pytest-cov = "^5.0.0"
+pytest-asyncio = "^0.23.7"
+pytest-mock = "^3.14.0"
+pytest-sugar = "^1.0.0"
+sourcery = "^1.19.0"
+pre-commit = "^3.7.1"
+ruff = "^0.4.10"
+
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E501", "I"]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 72
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
